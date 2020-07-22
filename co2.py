@@ -1,24 +1,44 @@
 #!/usr/bin/python
 
 import sys, serial, time
+import requests, json
+from influxdb import InfluxDBClient as influxdb
 
-comm = '/dev/ttyAMA0'
+comm = '/dev/ttyAMA0' 
 baudrate = 38400
 
 device = serial.Serial(comm, baudrate, timeout = 5)
 print(device)
 
-while True :
-	try:
-		rcvBuf = bytearray()
-		device.reset_input_buffer()
-		rcvBuf = device.read_until(size=12)
-		print rcvBuf
-		temp = rcvBuf.find('p')
-		a = rcvBuf[2:temp]
-		b = int(a)
-		print b
-	except Exception as e:
-		print("Exception read") + str(e)
+while True:
+    try:
+        rcvBuf = bytearray()
+        device.reset_input_buffer()
+        rcvBuf = device.read_until(size=12)
+        print rcvBuf
+        temp = rcvBuf.find('p')
+        a = rcvBuf[2:temp]
+        b = int(a)
 
-	time.sleep(5)
+        data = [{
+            'measurement':'co2',
+            'tags':{
+                'vision':'2410',
+                },
+            'fields':{
+                'co2':a,
+                }
+            }]
+        client=None
+        client = influxdb('localhost',8086,'root','root','co2')
+        if Client is not None:
+            try:
+                client.write_points(data)
+            except Exception as e:
+                print("Exception write") + str(e)
+            finally:
+                client.close()
+    except Exception as e:
+        print("Exception read")+str(e)
+
+    time.sleep(5)
