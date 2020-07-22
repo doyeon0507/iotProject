@@ -22,5 +22,3 @@ while True :
 		print("Exception read") + str(e)
 
 	time.sleep(5)
-
-
