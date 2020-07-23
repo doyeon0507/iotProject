@@ -165,9 +165,8 @@ python pir.py
 git add .
 git commit -m pirsoftware
 git push
-```
 
-##
+# 
 ```
 sudo apt raspi-config
 SNC Viewer
