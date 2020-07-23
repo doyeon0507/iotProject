@@ -102,7 +102,8 @@ sudo dpkg -i wiringpi-latest.deb
 ```
 
 
-pwd
+## pwd
+```
 /home/pi
 
 pwd
@@ -111,7 +112,7 @@ git
 cd /home/pi/
 cd ~
 git clone https://github.com/doyeon0507/iotProject
-
+```
 
 ## Git hub Use
 
@@ -137,6 +138,7 @@ git clone https://github.com/doyeon0507/iotProject
   endif
 ```
 
+```
 #!/user/bin/python
 
 import time
@@ -154,6 +156,7 @@ def intterrupt_fired(channel):
  while(True);
   time.sleep(1)
   print("timer fired")
+````
 
 # 명령어
 ```
