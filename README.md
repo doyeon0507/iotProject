@@ -156,24 +156,19 @@ def intterrupt_fired(channel):
   print("timer fired")
 
 # 명령어
- vim pir.py
- python pir.py
- git add .
+```
+vim pir.py
+python pir.py
+git add .
 git commit -m pirsoftware
 git push
+```
 
-
-## 
+##
+```
 sudo apt raspi-config
 SNC Viewer
 sncserver
-
-cd /
-ls
-cd ~
-cd - 
-cd /home/pi
-
 
 cp pir.py Documents/
 cp pir.py Documents/pir.py
@@ -181,49 +176,23 @@ cd Documents/
 ls
 >>pir.py
 
+
 pwd
 /home/pi/Documents
 
 cd ..
 pwd
 /home/pi
-
+```
 
 # bluetooth disable
+```
 sudo systemctl disable hciuart
-
-
-# !/usr/bin/python
 ```
-import sys, serial, time
 
-comm = 'dev/ttyAMA0'
-bauadrate = 38400
-
-device = serial.Serial(comm, baudrate, timeout = 5)
-print(device)
-
-while True :
- try:
-  rcvBuf = bytearray()
-  device.reset_input_bufer()
-  rcvBuf = device.read_until(size=12)
-
-  print rcvBuf
-  temp = rcvBuf.find('p')
-  a = rcvBuf[2:temp]
-  b = int(a)
-  print b
-  except Exception as e:
-   print("Exception read") + str(e)
-   time.sleep(5)
-
-
-```
 # grafana
 ```
 sudo service grafana-server start
-
 ```
 # telegram install
 ```
@@ -253,7 +222,8 @@ channel = 4
 GPIO
 ```
 
-# --------------------------------------------------------------------------------------------------------------------
+### 라즈베리파이 복사-----------------------------------------------------------------------------------------------------------------
+```
 pi@raspberrypi:~ $ influxdb
 bash: influxdb: command not found
 pi@raspberrypi:~ $ influx
@@ -1083,4 +1053,4 @@ To https://github.com/doyeon0507/iotProject
    0354953..16a3f93  master -> master
 pi@raspberrypi:~/iotProject $ 
 
-
+```
