@@ -154,34 +154,12 @@ def intterrupt_fired(channel):
  while(True);
   time.sleep(1)
   print("timer fired")
- 
- is
- 
- cd sttudy
- ls
- 
+
+# 명령어
  vim pir.py
  python pir.py
- 
- pip install
- 
- 
- pip 
-
-cd 
-Is
-Is
-cd ..
-rm 
-cd jjvision/
-
-Is
-
-README.md 
-
-git add .
+ git add .
 git commit -m pirsoftware
-
 git push
 
 
